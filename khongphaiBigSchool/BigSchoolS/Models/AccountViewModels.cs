@@ -55,7 +55,7 @@ namespace BigSchoolS.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Passwordcc")]
         public string Password { get; set; }
 
         [Display(Name = "Remember me?")]
