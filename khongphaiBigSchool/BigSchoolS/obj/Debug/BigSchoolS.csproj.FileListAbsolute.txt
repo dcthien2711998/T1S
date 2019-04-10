@@ -275,3 +275,4 @@ C:\Users\Dinh Cong Thien\Desktop\T1S\khongphaiBigSchool\BigSchoolS\bin\System.Ne
 C:\Users\Dinh Cong Thien\Desktop\T1S\khongphaiBigSchool\BigSchoolS\bin\System.Web.Http.xml
 C:\Users\Dinh Cong Thien\Desktop\T1S\khongphaiBigSchool\BigSchoolS\bin\System.Web.Http.WebHost.xml
 C:\Users\Dinh Cong Thien\Desktop\T1S\khongphaiBigSchool\BigSchoolS\obj\Debug\BigSchoolS.Migrations.AddFollowingsTable.resources
+C:\Users\Dinh Cong Thien\Desktop\T1S\khongphaiBigSchool\BigSchoolS\obj\Debug\BigSchoolS.Migrations.AddIsCanceledColumnToCourse.resources
