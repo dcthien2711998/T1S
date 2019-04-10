@@ -1,9 +1,11 @@
-﻿@model  BigSchoolS.ViewModels.CoursesViewModel
+﻿
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Attending";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="row">
-    <ul>
+<h2>Attending</h2>
+
+    <ul class="course">
         @foreach (var course in Model.upcomingCourses)
         {
             <li>
@@ -12,7 +14,7 @@
                         @course.DateTime.ToString("MM")
                     </div>
                     <div class="day">
-                         @course.DateTime.ToString("dd")
+                        @course.DateTime.ToString("dd")
                     </div>
                 </div>
                 <div class="details"
@@ -40,7 +42,6 @@
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
     <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
-
 <div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>
@@ -94,6 +95,6 @@
                     alert("Có gì đó sai sai?");
                 });
             }
-        }
+        });
     </script>
 }
