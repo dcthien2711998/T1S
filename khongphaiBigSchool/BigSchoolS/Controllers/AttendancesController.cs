@@ -19,7 +19,7 @@ namespace BigSchoolS.Controllers
         public IHttpActionResult Attend(AttendanceDto attendanceDto)
         {
             var userId = User.Identity.GetUserId(); 
-            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == attendanceDto.CourseId)) 
+            if (_dbContext.Attendances.Any(a=>a.AttendeeId==userId && a.CourseId==attendanceDto.CourseId) ) //~~
             {
                 return BadRequest("The attendance already exists!");
             }
@@ -27,7 +27,7 @@ namespace BigSchoolS.Controllers
             var attendance = new Attendance
             {
                 CourseId = attendanceDto.CourseId,
-                AttendeeId = User.Identity.GetUserId()
+                AttendeeId=userId
             };
 
             _dbContext.Attendances.Add(attendance);
