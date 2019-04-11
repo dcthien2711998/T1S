@@ -14,6 +14,7 @@ namespace BigSchoolS.Models
         [Key]
         [Column(Order =1)]
         public int CourseId { get; set; }
+
         public ApplicationUser Attendee { get; set; }
 
         [Key]

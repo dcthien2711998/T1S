@@ -2,15 +2,12 @@
 using BigSchoolS.DTOs;
 using BigSchoolS.Models;
 using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace BigSchoolS.Controllers
 {
+    [Authorize]
     public class AttendancesController : ApiController
     {
         private ApplicationDbContext _dbContext;
@@ -18,13 +15,14 @@ namespace BigSchoolS.Controllers
         {
             _dbContext = new ApplicationDbContext();
         }
-
         [HttpPost]
         public IHttpActionResult Attend(AttendanceDto attendanceDto)
         {
-            var userId = User.Identity.GetUserId();
-            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == attendanceDto.CourseId))
+            var userId = User.Identity.GetUserId(); 
+            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == attendanceDto.CourseId)) 
+            {
                 return BadRequest("The attendance already exists!");
+            }
 
             var attendance = new Attendance
             {
@@ -41,7 +39,6 @@ namespace BigSchoolS.Controllers
         public IHttpActionResult DeleteAttendance(int id)
         {
             var userId = User.Identity.GetUserId();
-
             var attendance = _dbContext.Attendances
                .SingleOrDefault(a => a.AttendeeId == userId && a.CourseId == id);
 
